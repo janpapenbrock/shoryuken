@@ -19,7 +19,7 @@ module Shoryuken
     def run(args)
       self_read, self_write = IO.pipe
 
-      %w(INT TERM USR1 USR2 TTIN).each do |sig|
+      %w[INT TERM USR1 USR2 TTIN].each do |sig|
         begin
           trap sig do
             self_write.puts(sig)
